@@ -6,14 +6,22 @@ public class stack {
 
 		Stack<Integer> nums = new Stack<>();    // Declare stack
 		
-		// methods
+		// add 
 		nums.push(1);
-		nums.add(2);		
+		nums.add(2);
+		
+		// remove
 		nums.pop();
+		
+		// retrieve without delete
 		nums.peek();
+		
+		// set value by (index, value)
+		nums.set(0, 5);
+
+		// methods
 		nums.contains(3);
 		nums.isEmpty();
-		nums.set(0, 5); // index, value
 		nums.size();
 		nums.get(0);
 		nums.clear();
