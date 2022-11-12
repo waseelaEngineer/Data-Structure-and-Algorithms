@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class arrayList {
+
+	public static void main(String[] args) {
+		// good for searching and retrieving data
+		ArrayList<Integer> nums = new ArrayList<>();    // Declare ArrayList
+		
+		nums.add(1);
+//		nums.remove(2);    // remove by index
+		nums.remove(Integer.valueOf(2));   // remove by value only needed for integer arrayList
+		nums.removeIf(e -> e == 7);    // remove if condition is true
+		nums.contains(2);
+		nums.isEmpty();
+		nums.get(0);
+		nums.indexOf(3);
+		nums.size();
+		nums.set(0, 4);    // (index of old value, new value)
+		nums.toArray();
+		nums.toString();    // convert to string arrayList
+		nums.lastIndexOf(4);   
+		nums.clear();
+		
+		nums.forEach( n -> {
+			n += 2;
+		});    // do for each element in array
+		
+	    Iterator<Integer> it = nums.iterator();
+	    while(it.hasNext())
+	    	System.out.print(it.next());    // do for each element in array
+	 
+	}
+
+}
