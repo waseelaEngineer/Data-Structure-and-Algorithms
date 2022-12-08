@@ -1,11 +1,21 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class arrayList {
 
 	public static void main(String[] args) {
 		// good for searching and retrieving data
 		ArrayList<Integer> nums = new ArrayList<>();    // Declare ArrayList
+		
+		// assign value in declaration
+		List<Integer> a = new ArrayList<>() {{add(3); add(4); add(5);}};
+		List<Integer> b = new ArrayList<>(a) {{add(6);}};
+		
+		//Add two lists
+		List<Integer> c = new ArrayList<>();
+		c.addAll(a);
+		c.addAll(b);
 		
 		nums.add(1);
 //		nums.remove(2);    // remove by index
