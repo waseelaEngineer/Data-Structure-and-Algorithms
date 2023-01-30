@@ -3,10 +3,13 @@ public class mergeSort {
 
 	public static void main(String[] args) {
 		int[] res = new int[] {1, 4, 3, 2, 5, 7, 8, 6, 9, 10};
-		sort(res);
+		divide(res);
+		
+		for (int num : res)
+			System.out.println(num);
 	}
 	
-	static void sort(int[] inputArray) {
+	static void divide(int[] inputArray) {
 		int inputLength = inputArray.length;
 		
 		if (inputLength < 2) return;
@@ -18,12 +21,12 @@ public class mergeSort {
 		for (int i = 0; i < midIndex; i++)
 			leftHalf[i] = inputArray[i];
 		
-		for (int j = midIndex; j < inputLength; j++) 
+		for (int j = midIndex; j < inputLength; j++)
 			rightHalf[j - midIndex] = inputArray[j];
 		
-		sort(leftHalf);
-		sort(rightHalf);
-
+		divide(leftHalf);
+		divide(rightHalf);
+		
 		merge(inputArray, leftHalf, rightHalf);
 	}
 	
@@ -32,8 +35,7 @@ public class mergeSort {
 		int rightSize = rightHalf.length;
 		
 		int i = 0, j = 0, k = 0;
-		while(i < leftSize && j < rightSize) {
-			
+		while (i < leftSize && j < rightSize) {
 			if (leftHalf[i] <= rightHalf[j]) {
 				inputArray[k] = leftHalf[i];
 				i++;
@@ -51,10 +53,10 @@ public class mergeSort {
 			k++;
 		}
 		
-		while(j < rightSize) {
+		while (j < rightSize) {
 			inputArray[k] = rightHalf[j];
 			j++;
 			k++;
-		}		
+		}
 	}
 }
